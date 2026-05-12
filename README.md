@@ -1,0 +1,1 @@
+module alu(input[1:0]a,b,input[2:0]sel, output reg[1:0] result, output reg carry); always @ (*) begin result =2'b00; carry = 1'b0; case(sel) 3'b000 : {carry,result}= a+b; 3'b001 : {carry,result}= a-b; 3'b010 : result = a&b; 3'b011 : result = a|b; 3'b100 : result = a^b; default: result = 2'b00; endcase end endmodule
